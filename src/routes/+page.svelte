@@ -1,15 +1,10 @@
-<svelte:head>
-	<title>ITGG 2023</title>
-	<link rel="icon" href="/logo.png">
-</svelte:head>
-
 <script lang="ts">
 	import Stage1 from '$lib/components/Stage1.svelte';
 	import { profileSchema } from '$lib/validation';
 	import { animate, spring } from 'motion';
 	import { onMount } from 'svelte';
 	import { fade, slide } from 'svelte/transition';
-
+	import { page } from '$app/stores';
 	type Gate = 'AND' | 'NOR' | 'OR' | 'NOT';
 
 	let squareEl: SVGElement;
@@ -95,7 +90,7 @@
 			error = validator.error.flatten().formErrors[0];
 			return;
 		}
-		
+
 		loadingAnimation();
 
 		const getUser = await fetch(`/api/${studentId}`);
@@ -109,14 +104,14 @@
 					loading = false;
 					stage = 1;
 				}, 500);
-			}, 2000)
+			}, 2000);
 		} else {
 			const geterror = await getUser.json();
 			error = geterror.message;
 			setTimeout(() => {
 				loading = false;
 				showInput = true;
-			}, 2000)
+			}, 2000);
 		}
 	};
 
@@ -132,6 +127,13 @@
 		showInput = true;
 	});
 </script>
+
+<svelte:head>
+	<title>ITGG 2023</title>
+	<link rel="icon" href="/logo.png" />
+	<meta property="og:image" content={`${$page.url.origin}/cover.png`} />
+	<meta property="twitter:image" content={`${$page.url.origin}/cover.png`} />
+</svelte:head>
 
 <div class="w-full flex flex-col justify-center items-center space-y-2 font-prompt min-h-[100svh]">
 	{#if stage == 0}
