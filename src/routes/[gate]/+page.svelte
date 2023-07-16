@@ -1,8 +1,3 @@
-<svelte:head>
-	<title>ITGG 2023 - {gate}</title>
-	<link rel="icon" href={`/${gate}.png`}>
-</svelte:head>
-
 <script lang="ts">
 	import type { PageData } from './$types';
 
@@ -28,7 +23,7 @@
 		}
 	};
 
-	const gates:any = {
+	const gates: any = {
 		AND: {
 			color: 'text-blue-500',
 			path: paths.square
@@ -48,11 +43,18 @@
 	};
 </script>
 
+<svelte:head>
+	<title>ITGG 2023 - {gate}</title>
+	<link rel="icon" href={`/${gate}.png`} />
+</svelte:head>
+
 <div class="flex flex-col p-4 gap-2 items-center font-prompt">
 	<svg class="w-12 h-12" viewBox="0 0 100 100">
-        <path fill={gates[gate]?.path?.color} d={gates[gate]?.path?.d} />
-    </svg>
-	<p class="text-3xl">รายชื่อเพื่อน ๆ Gate <span class={`font-bold text-4xl ${gates[gate].color}`}>{gate}</span></p>
+		<path fill={gates[gate]?.path?.color} d={gates[gate]?.path?.d} />
+	</svg>
+	<p class="text-3xl">
+		รายชื่อเพื่อน ๆ Gate <span class={`font-bold text-4xl ${gates[gate].color}`}>{gate}</span>
+	</p>
 	<div class="w-full md:w-8/12">
 		<table class="w-full table-fixed">
 			<thead class="border-b">
@@ -72,10 +74,3 @@
 		</table>
 	</div>
 </div>
-
-<!-- {#each gateData as { studentId, name }}
-    <tr>
-        <td class="border p-1">{studentId}</td>
-        <td class="border p-1">{name}</td>
-    </tr>
-{/each} -->
