@@ -1,3 +1,8 @@
+<svelte:head>
+	<title>ITGG 2023 - {gate}</title>
+	<link rel="icon" href={`/${gate}.png`}>
+</svelte:head>
+
 <script lang="ts">
 	import type { PageData } from './$types';
 

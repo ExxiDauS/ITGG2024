@@ -1,3 +1,8 @@
+<svelte:head>
+	<title>ITGG 2023</title>
+	<link rel="icon" href="/logo.png">
+</svelte:head>
+
 <script lang="ts">
 	import Stage1 from '$lib/components/Stage1.svelte';
 	import { profileSchema } from '$lib/validation';
