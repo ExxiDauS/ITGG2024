@@ -19,7 +19,7 @@ export const GET: RequestHandler = async ({ params }) => {
 		);
 	}
 
-	const allUserFromGate = await prisma.user.findMany({
+	let allUserFromGate = await prisma.user.findMany({
 		where: {
 			gate: gate as Gate
 		},
@@ -29,5 +29,6 @@ export const GET: RequestHandler = async ({ params }) => {
 			gate: true
 		}
 	});
+	allUserFromGate = allUserFromGate.sort((a, b) => parseInt(a.studentId) - parseInt(b.studentId));
 	return json(allUserFromGate);
 };
