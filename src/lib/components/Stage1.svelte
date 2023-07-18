@@ -76,7 +76,7 @@
 	let toggle = false;
 </script>
 
-<div class="flex flex-col justify-center gap-2">
+<div class="flex flex-col justify-center space-y-2">
 	{#if !playing}
 		<p class="text-center text-slate-400" transition:slide>กดที่เรขาคณิตเพื่อเริ่มสุ่ม</p>
 	{/if}
