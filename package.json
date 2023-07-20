@@ -29,6 +29,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@neoconfetti/svelte": "^1.0.0",
 		"@prisma/client": "5.0.0",
 		"@siluat/flubber": "^0.4.2",
 		"motion": "^10.16.2",

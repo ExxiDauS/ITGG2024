@@ -4,6 +4,7 @@
 	import { interpolate } from '@siluat/flubber';
 	import { tweened } from 'svelte/motion';
 	import { slide } from 'svelte/transition';
+	import { confetti } from '@neoconfetti/svelte';
 
 	type Gate = 'AND' | 'NOR' | 'OR' | 'NOT';
 
@@ -76,9 +77,14 @@
 	let toggle = false;
 </script>
 
-<div class="flex flex-col justify-center space-y-2">
+<div class="flex flex-col justify-center space-y-2 relative">
 	{#if !playing}
 		<p class="text-center text-slate-400" transition:slide>กดที่เรขาคณิตเพื่อเริ่มสุ่ม</p>
+	{/if}
+	{#if toggle}
+		<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-3/4">
+			<div use:confetti={{stageHeight: 1000}} />
+		</div>
 	{/if}
 	<button
 		disabled={playing}
