@@ -135,7 +135,7 @@
 	<meta property="twitter:image" content={`${$page.url.origin}/cover.png`} />
 </svelte:head>
 
-<div class="w-full flex flex-col justify-center items-center space-y-2 font-prompt min-h-[100svh]">
+<div class="w-full flex flex-col justify-center items-center space-y-2 font-prompt min-h-[100svh] overflow-hidden">
 	{#if stage == 0}
 		<div class="flex gap-2" transition:slide>
 			<svg bind:this={squareEl} class="w-12 h-12" viewBox="0 0 100 100">
