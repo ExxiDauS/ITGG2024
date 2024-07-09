@@ -4,19 +4,19 @@
 </script>
 
 <svelte:head>
-	<meta name="title" content="ITGG 2023" />
+	<meta name="title" content="ITGG 2024" />
 	<meta name="description" content="" />
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={$page.url.origin} />
-	<meta property="og:title" content="ITGG 2023" />
+	<meta property="og:title" content="ITGG 2024" />
 	<meta property="og:description" content="" />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content={$page.url.origin} />
-	<meta property="twitter:title" content="ITGG 2023" />
+	<meta property="twitter:title" content="ITGG 2024" />
 	<meta property="twitter:description" content="" />
 </svelte:head>
 

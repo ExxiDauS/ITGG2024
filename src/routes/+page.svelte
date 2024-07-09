@@ -129,7 +129,7 @@
 </script>
 
 <svelte:head>
-	<title>ITGG 2023</title>
+	<title>ITGG 2024</title>
 	<link rel="icon" href="/logo.png" />
 	<meta property="og:image" content={`${$page.url.origin}/cover.png`} />
 	<meta property="twitter:image" content={`${$page.url.origin}/cover.png`} />
