@@ -20,6 +20,6 @@
 	<meta property="twitter:description" content="" />
 </svelte:head>
 
-<div class="absolute bottom-2 right-2 text-slate-50 select-none">tong.k</div>
+<div class="absolute bottom-2 right-2 text-slate-50 select-none">Thank you to tong.k for this website ❤️</div>
 
 <slot />
