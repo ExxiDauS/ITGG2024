@@ -44,7 +44,7 @@
 </script>
 
 <svelte:head>
-	<title>ITGG 2023 - {gate}</title>
+	<title>ITGG 2024 - {gate}</title>
 	<link rel="icon" href={`/${gate}.png`} />
 </svelte:head>
 
