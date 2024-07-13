@@ -1,0 +1,36 @@
+services:
+  webserver:
+    image: macbre/nginx-http3:latest
+    ports:
+      - 80:80
+      - '443:443/tcp'
+      - '443:443/udp' # use UDP for usage of HTTP/3
+    restart: always
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./letsencrypt:/etc/letsencrypt:ro
+      - ./certbot/data:/var/www/certbot
+    depends_on:
+      - web-frontend
+    environment:
+      - TZ=Asia/Bangkok
+
+  web-frontend:
+    build: ./ITGG2024
+    restart: always
+    environment:
+      - DATABASE_URL=mongodb+srv://66070017:uZSPwjYjQ42wTlo2@cluster0.zrqlokl.mongodb.net/ITGG2024GATE
+      - MONGODB_URI=mongodb+srv://vercel-admin-user:fHT9UwfFKabDJCY4@cluster0.zrqlokl.mongodb.net/ITGG2024GATE?retryWri>
+
+ # certbot:
+ #   container_name: certbot
+ #   image: certbot/certbot:latest
+ #   depends_on:
+ #     - webserver
+ #   command: >-
+ #            certonly --reinstall --webroot --webroot-path=/var/www/certbot --force-renewal
+ #            --email 66070017@kmitl.ac.th --agree-tos --no-eff-email --key-type ecdsa --elliptic-curve secp384r1
+ #            -d itgg.it.kmitl.ac.th
+ #   volumes:
+ #     - ./letsencrypt:/etc/letsencrypt
+ #     - ./certbot/data:/var/www/certbot
